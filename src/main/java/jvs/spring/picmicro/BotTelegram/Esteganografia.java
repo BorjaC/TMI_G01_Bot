@@ -29,41 +29,8 @@ public class Esteganografia extends TelegramLongPollingBot{
 	 List<PhotoSize> photos = null;
 	 BufferedImage image;
 	 
-	 
-	// @Override
-	 
-
-/*	public void onUpdateReceived_TEXT (Update update) {
-
-            //check if the update has a message
-            if(update.hasMessage()){
-                    Message message = update.getMessage();
-
-                    //check if the message has text. it could also  contain for example a location ( message.hasLocation() )
-                    if(message.hasText()){
-
-                            //create a object that contains the information to send back the message
-                            SendMessage sendMessageRequest = new SendMessage();
-                            sendMessageRequest.setChatId(message.getChatId().toString()); //who should get the message? the sender from which we got the message...
-                            sendMessageRequest.setText("Recibido_mensaje : " + message.getText());
-                           
-
-       	            
-                            try {
-                                    sendMessage(sendMessageRequest); //at the end, so some magic and send the message ;)
-                            } catch (TelegramApiException e) {
-                                    //do some error handling
-                            }
-                    }
-            }
-
-    }
-
-*/	
-        
+	
 	 public void onUpdateReceived (Update update) {
-		
-		 
 		// We check if the update has a message and the message has text
 	        if (update.hasMessage() && update.getMessage().hasText()) {
 	            // Set variables
@@ -207,10 +174,8 @@ public class Esteganografia extends TelegramLongPollingBot{
     	return "563754268:AAFBjVSFsJYdJai8LVBp4BGIJ7hxtDG80Y8";
     }
     
-    
-    
-    //***************************revisar ABAJO https://github.com/rubenlagus/TelegramBots/wiki/FAQ
-    
+       
+    // send document
     
     private void sendDocUploadingAFile(Long chatId, java.io.File save,String caption) throws TelegramApiException {
 
@@ -223,7 +188,7 @@ public class Esteganografia extends TelegramLongPollingBot{
    
     
     
-    //descargar foto
+    //download photo
     
     public java.io.File downloadPhotoByFilePath(String filePath) {
         try {
